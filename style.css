@@ -1,0 +1,281 @@
+/* ---------- Colour and font variables ---------- */
+:root {
+  --ink: #1d2b3a;        /* main text and header */
+  --paper: #f7f8fa;      /* page background */
+  --white: #ffffff;
+  --teal: #0f766e;       /* main accent */
+  --teal-dark: #0b5a54;
+  --amber: #f2b84b;      /* highlight accent */
+  --line: #d9dee5;       /* borders */
+  --heading-font: Georgia, "Times New Roman", serif;
+  --body-font: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+/* ---------- Reset and base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+a {
+  color: var(--teal);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ---------- Header and navigation (Flexbox) ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 40px;
+  background-color: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  border-bottom-color: var(--amber);
+}
+
+/* ---------- Layout wrapper for sections ---------- */
+main section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 64px 24px 16px;
+}
+
+h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--amber);
+  display: inline-block;
+}
+
+h3 {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+/* ---------- Hero (Flexbox) ---------- */
+main section.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 72px;
+  padding-bottom: 56px;
+}
+
+.hello {
+  font-size: 1.1rem;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-family: var(--heading-font);
+  font-size: 3.4rem;
+  line-height: 1.15;
+  margin: 4px 0 12px;
+}
+
+.tagline {
+  max-width: 34ch;
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+
+.profile-pic {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--amber);
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  margin-right: 10px;
+  background-color: var(--teal);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--teal);
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background-color: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--teal);
+}
+
+.btn-outline:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* ---------- About (CSS Grid) ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.info-list {
+  list-style: none;
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 6px;
+  padding: 18px 22px;
+}
+
+.info-list li {
+  padding: 4px 0;
+}
+
+/* ---------- Cards for Education, Projects, Interests (CSS Grid) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--teal);
+  border-radius: 6px;
+  padding: 22px;
+}
+
+.card p {
+  margin-bottom: 8px;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #55657a;
+}
+
+.card-link {
+  font-weight: 600;
+}
+
+/* ---------- Skills (Flexbox) ---------- */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 8px 20px;
+  background-color: var(--ink);
+  color: var(--white);
+  border-radius: 999px;
+  border-bottom: 3px solid var(--amber);
+}
+
+/* ---------- Contact ---------- */
+.contact-box {
+  font-style: normal;
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--amber);
+  border-radius: 6px;
+  padding: 22px 26px;
+  max-width: 520px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 64px;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--ink);
+  color: var(--white);
+}
+
+/* ---------- Responsive (phones and small screens) ---------- */
+@media (max-width: 720px) {
+  .site-header {
+    padding: 14px 20px;
+  }
+
+  main section.hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
